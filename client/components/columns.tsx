@@ -98,7 +98,7 @@ export const columns: ColumnDef<Computer>[] = [
         ),
         cell: ({ row }) => <div className="w-[200px]">{
             row.getValue("cpu") } @ { row.getValue("cpu_cores") }x{
-            row.getValue('cpu_base') / 100}ГГц </div>,
+            row.getValue('cpu_base') as number / 100}ГГц </div>,
     },
     {
         accessorKey: "ram_size",

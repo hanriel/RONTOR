@@ -6,7 +6,7 @@ import {UserNav} from "@/components/user-nav";
 import {ThemeToggle} from "@/components/theme-toggle";
 
 async function getTasks() {
-    const res = await fetch('http://localhost:7777/computers', { cache: "no-cache" })
+    const res = await fetch('https://api.rontor.hanriel.ru/computers', { cache: "no-cache" })
     if (!res.ok) { throw new Error('Failed to fetch data') }
 
     return res.json()

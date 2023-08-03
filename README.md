@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="http://rontor.hanriel.ru/" target="blank"><img src=".github/assets/logo.png" width="250" alt="rontor Logo" /></a>
+    <a href="http://rontor.hanriel.ru/" target="blank"><img src="https://rontor.hanriel.ru/Logo_Dark_Badge.png" width="250" alt="rontor Logo" /></a>
 </p>
 
 ## Installation

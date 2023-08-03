@@ -37,16 +37,17 @@ export default async function Home() {
                 </div>
                 <div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
                     <div className="flex items-center justify-between space-y-2">
-                        <div>
-                            <h2 className="text-2xl font-bold tracking-tight">С возвращением!</h2>
-                            <p className="text-muted-foreground">
-                                Сдесь список АРМ учреждения!
-                            </p>
-                        </div>
+                        <Image src='/Logo_Dark_Badge.png' alt='Logo' width={120} height={40} className='space-x-2'/>
                         <div className="flex items-center space-x-2">
                             <UserNav />
                             <ThemeToggle />
                         </div>
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold tracking-tight">С возвращением!</h2>
+                        <p className="text-muted-foreground">
+                            Сдесь список АРМ учреждения!
+                        </p>
                     </div>
                   <DataTable data={tasks} columns={columns} />
                 </div>

@@ -1,12 +1,16 @@
-import { Stage, Layer, Circle, Text, Image } from 'react-konva';
+import { Stage, Layer, Image } from 'react-konva';
 import useImage from 'use-image';
 import React, {useState} from "react";
+import {Computer} from "@/components/columns";
 
-function Canvas() {
+interface ICanvasProps {className: string, width: number, height: number, comps: Computer[]}
+
+function Canvas(props: ICanvasProps) {
     const [scale, setScale] = useState({x:1, y:1});
     const [position, setPosition] = useState({x:1, y:1});
     const [image] = useImage('first_floor.svg');
     const [image_pc_err] = useImage('pc_err.svg');
+    const [image_pc_ok] = useImage('pc_ok.svg');
 
     let scaleBy = 1.1;
 
@@ -31,22 +35,23 @@ function Canvas() {
         //    y: pointer.y - mousePointTo.y * newScale,
         //};
         //setPosition(newPos);
-
     }
 
     return (
         <Stage
-            width={window.innerWidth}
-            height={window.innerHeight}
+            width={window.innerWidth - 385}
+            height={window.innerHeight - 65}
             draggable
             onWheel={onWh}
             scale={scale}
             x={position.x}
-            y={position.y}>
+            y={position.y}
+            className={props.className}>
             <Layer>
-                <Text text="Try to drag a star" />
                 <Image image={image}/>
-                <Image image={image_pc_err} x={10} y={10}/>
+                {props.comps.map(comp => (
+                    <Image draggable image={image_pc_ok} x={10} y={10}/>
+                ))}
             </Layer>
         </Stage>
     );

@@ -50,7 +50,7 @@ function Canvas(props: ICanvasProps) {
             <Layer>
                 <Image image={image}/>
                 {props.comps.map(comp => (
-                    <Image draggable image={image_pc_ok} x={10} y={10}/>
+                    <Image key={comp.inv} draggable image={image_pc_ok} x={10} y={10}/>
                 ))}
             </Layer>
         </Stage>

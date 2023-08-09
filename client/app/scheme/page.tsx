@@ -17,16 +17,14 @@ export default async function Home() {
 
     const props = {
         className: 'hidden lg:block',
-        comps: await getTasks()
+        comps: await getTasks(),
     };
-
-    const canvasProps = 'col-span-3 lg:col-span-4 lg:border-l'
 
     return (
         <>
             <div className="grid lg:grid-cols-5 h-[90vh]">
                 <Sidebar {...props} className="hidden lg:block" />
-                <Canvas {...props} className='col-span-3 lg:col-span-4 lg:border-l'/>
+                <Canvas {...props} className='col-span-3 lg:col-span-4 lg:border-l' />
             </div>
         </>
 

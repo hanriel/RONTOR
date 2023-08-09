@@ -46,10 +46,10 @@
     "three-forcegraph": "^1.41.9",
     "three.interactive": "^1.7.0",
     "typescript": "5.1.6",
-    "use-image": "^1.1.1"
+    "use-image": "^1.1.1",
+    "konva": "^9.2.0",
+    "react-konva": "^18.2.10"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.8",
-    "@types/three": "^0.155.0"
   }
 }

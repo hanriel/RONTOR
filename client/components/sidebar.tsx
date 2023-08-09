@@ -20,7 +20,7 @@ export function Sidebar(props: ISidebarProps) {
                     </h2>
                     <div className="space-y-1">
                         {props.comps.map(comp =>
-                            <Card>
+                            <Card key={comp.inv}>
                                 <Button className='float-right' variant="ghost" size="icon"><DotsVerticalIcon/></Button>
                                 <CardHeader>
                                     <CardTitle>

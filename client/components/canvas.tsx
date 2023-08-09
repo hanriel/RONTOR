@@ -3,7 +3,7 @@ import useImage from 'use-image';
 import React, {useState} from "react";
 import {Computer} from "@/components/columns";
 
-interface ICanvasProps {className: string, width: number, height: number, comps: Computer[]}
+interface ICanvasProps {className: string, comps: Computer[]}
 
 function Canvas(props: ICanvasProps) {
     const [scale, setScale] = useState({x:1, y:1});
@@ -50,7 +50,7 @@ function Canvas(props: ICanvasProps) {
             <Layer>
                 <Image image={image}/>
                 {props.comps.map(comp => (
-                    <Image draggable image={image_pc_ok} x={10} y={10}/>
+                    <Image key={comp.inv} draggable image={image_pc_ok} x={10} y={10}/>
                 ))}
             </Layer>
         </Stage>

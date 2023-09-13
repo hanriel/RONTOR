@@ -21,7 +21,7 @@ export class ComputersService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} computer`;
+    return this.repository.findOneBy({ inv: id });
   }
 
   update(id: number, updateComputerDto: UpdateComputerDto) {

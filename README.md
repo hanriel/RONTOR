@@ -2,6 +2,8 @@
     <a href="http://rontor.hanriel.ru/" target="blank"><img src="https://rontor.hanriel.ru/Logo_Dark_Badge.png" width="250" alt="rontor Logo" /></a>
 </p>
 
+[![Docker Image CI](https://github.com/hanriel/rontor/actions/workflows/deploy.yml/badge.svg)](https://github.com/hanriel/rontor/actions/workflows/deploy.yml)
+
 ## Installation
 
 ```bash

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateComputerDto } from './dto/create-computer.dto';
 import { UpdateComputerDto } from './dto/update-computer.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -20,8 +20,13 @@ export class ComputersService {
     return this.repository.find();
   }
 
-  findOne(id: number) {
-    return this.repository.findOneBy({ inv: id });
+  async findOne(id: number) {
+    let computer = await this.repository.findOneBy({ inv: id });
+    if(computer) {
+      return computer;
+    } else {
+      throw new HttpException('Bad Request', HttpStatus.BAD_REQUEST);
+    }
   }
 
   update(id: number, updateComputerDto: UpdateComputerDto) {

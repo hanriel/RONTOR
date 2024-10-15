@@ -11,7 +11,7 @@ import {
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from 'react';
 
 async function getData(decimalID : number) {
-    const res = await fetch('https://api.rontor.hanriel.ru/computers/' + decimalID, { cache: "no-cache" })
+    const res = await fetch('https://rontor-api.hanriel.ru/computers/' + decimalID, { cache: "no-cache" })
    
     if (!res.ok) {
       throw new Error('Failed to fetch data')

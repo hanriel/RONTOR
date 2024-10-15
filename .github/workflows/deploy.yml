@@ -14,8 +14,9 @@ jobs:
       - name: Get Client version from package.json
         run: echo "CLIENT_PACKAGE_VERSION=$(node -p "require('./client/package.json').version")" >> $GITHUB_ENV
 
-      - name: Set up Docker
-        uses: docker-practice/actions-setup-docker@master
+      - name: Docker Setup Docker
+        uses: crazy-max/ghaction-setup-docker@v3.3.0
+            
 
       - name: Build Docker Client Image
         run: docker build --file=client/Dockerfile -t rontor-client:latest -t rontor-clinet:${{ env.CLIENT_PACKAGE_VERSION }} .
@@ -38,8 +39,8 @@ jobs:
       - name: Get Server version from package.json
         run: echo "SERVER_PACKAGE_VERSION=$(node -p "require('./server/package.json').version")" >> $GITHUB_ENV
 
-      - name: Set up Docker
-        uses: docker-practice/actions-setup-docker@master
+      - name: Docker Setup Docker
+        uses: crazy-max/ghaction-setup-docker@v3.3.0
 
       - name: Build Docker Server Image
         run: docker build --file=server/Dockerfile -t rontor-server:latest -t rontor-server:${{ env.SERVER_PACKAGE_VERSION }} .

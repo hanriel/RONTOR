@@ -8,7 +8,7 @@ const Canvas = dynamic(() => import('@/components/canvas'), {
 });
 
 async function getTasks() {
-    const res = await fetch('https://api.rontor.hanriel.ru/computers', { cache: "no-cache" })
+    const res = await fetch('https://rontor-api.hanriel.ru/computers', { cache: "no-cache" })
     if (!res.ok) { throw new Error('Failed to fetch data') }
     return res.json();
 }

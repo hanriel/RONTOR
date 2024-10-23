@@ -32,13 +32,15 @@
     "cmdk": "^0.2.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "konva": "^9.2.0",
     "lodash-es": "^4.17.21",
     "lucide-react": "^0.263.1",
-    "next": "13.4.12",
+    "next": "^15.0.1",
     "next-themes": "^0.2.1",
-    "postcss": "8.4.27",
+    "postcss": "^8.4.47",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-konva": "^18.2.10",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.6",
@@ -46,10 +48,6 @@
     "three-forcegraph": "^1.41.9",
     "three.interactive": "^1.7.0",
     "typescript": "5.1.6",
-    "use-image": "^1.1.1",
-    "konva": "^9.2.0",
-    "react-konva": "^18.2.10"
-  },
-  "devDependencies": {
+    "use-image": "^1.1.1"
   }
 }

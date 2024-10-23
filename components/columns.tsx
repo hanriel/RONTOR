@@ -31,6 +31,11 @@ export type Computer = {
     wan: boolean
     psu: number
     photo: string
+    eth_mac: string
+    wifi_mac: string
+    ip_reserv: number
+    security_soft: boolean
+    vipnet_license: string
 }
 
 export const columns: ColumnDef<Computer>[] = [
@@ -56,20 +61,20 @@ export const columns: ColumnDef<Computer>[] = [
         enableHiding: false,
     },
     {
-        accessorKey: "inv",
-        header: ({ column }) => (
-            <DataTableColumnHeader column={column} title="Инв. №" />
-        ),
-        filterFn: (row, id, value) => {
-            return value.includes(row.getValue(id))
-        },
-    },
-    {
         accessorKey: 'hostname',
         header: ({ column }) => (
             <DataTableColumnHeader column={column} title="Имя" />
         ),
         cell: ({ row }) => <div className="w-[40px]">{row.getValue("hostname")}</div>,
+        filterFn: (row, id, value) => {
+            return value.includes(row.getValue(id))
+        },
+    },
+    {
+        accessorKey: "inv",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="Инв. №" />
+        ),
         filterFn: (row, id, value) => {
             return value.includes(row.getValue(id))
         },
@@ -117,8 +122,32 @@ export const columns: ColumnDef<Computer>[] = [
         cell: ({ row }) => <div className="w-[40px]">{
             row.getValue("disk_space") }Гб</div>,
     },
-    { id: "actions", cell: ({ row }) => <DataTableRowActions row={row} />, },
-    { accessorKey: "ram_type", },
+    {
+        accessorKey: "eth_mac",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="ETH MAC" />
+        ),
+    },
+    { 
+        accessorKey: "wifi_mac",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="WIFI MAC" />
+        ),
+    },
+    {
+        accessorKey: "ip_reserv",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="IP-адресс" />
+        ),
+    },
+    {
+        accessorKey: "vipnet_license",
+        header: ({ column }) => (
+            <DataTableColumnHeader column={column} title="VipNet" />
+        ),
+    },
     { accessorKey: "cpu_cores", },
     { accessorKey: "cpu_base", },
+    { accessorKey: "ram_type", },
+    { id: "actions", cell: ({ row }) => <DataTableRowActions row={row} />, },
 ]

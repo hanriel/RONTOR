@@ -2,13 +2,11 @@ import Image from 'next/image'
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from 'react';
 
 async function getData(decimalID : number) {
     const res = await fetch('https://rontor-api.hanriel.ru/computers/' + decimalID, { cache: "no-cache" })
